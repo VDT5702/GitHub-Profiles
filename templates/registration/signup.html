@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+
+<div style="text-align: center;">
+    <button style="text-align: center; background-color: royalblue; color: white; display: inline-block; font-size: 20px;"><a href="{% url 'login' %}"> Login </a></button>
+    <button style="text-align: center; background-color: royalblue; color: white; display: inline-block; font-size: 20px;" > <a href="{% url 'signup' %}"> Sign Up </a></button>
+
+</div>
+
+  <h2>Sign up</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Sign Up</button>
+  </form>
+
+{% endblock %}

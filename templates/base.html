@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Django Auth Tutorial{% endblock %}</title>
+</head>
+<body>
+  <h3 style="color: red; font-family: 'Courier New', Courier, monospace; text-align: center;"> Built by: 200050156 and 200050066 </h3>
+  <h1 style="color: black; font-family:Arial, Helvetica, sans-serif; text-align: center;">Welcome to GitHub Profiles!</h1>
+  <main>
+    {% block content %}
+    {% if user.is_authenticated %}
+    <div style="text-align: center;">
+      <button style="text-align: center; background-color: royalblue; color: white; display: inline-block; font-size: 20px;"> <a href="/accounts/explore"> Explore </a></button>
+      <button style="text-align: center; background-color: royalblue; color: white; display: inline-block; font-size: 20px;"> <a href="/accounts/profile"> My Profile</a></button>
+      <button style="text-align: center; background-color: royalblue; color: white; display: inline-block; font-size: 20px;"> <a href="{% url 'logout' %}"> Logout </a></button>
+    </div>
+      {% else %}
+    <div style="text-align: center;">
+      <button style="text-align: center; background-color: royalblue; color: white; display: inline-block; font-size: 20px;"><a href="{% url 'login' %}"> Login </a></button>
+      <button style="text-align: center; background-color: royalblue; color: white; display: inline-block; font-size: 20px;" > <a href="{% url 'signup' %}"> Sign Up </a></button>
+    </div>
+      {% endif %}
+    {% endblock %}
+    {% block content2%}
+    {%endblock%}
+  </main>
+</body>
+</html>

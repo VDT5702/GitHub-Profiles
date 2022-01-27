@@ -1,0 +1,13 @@
+
+
+{% extends 'base.html' %}
+
+{% block content2 %}
+
+
+    {%for user in Users%}
+      <a href= '../profile/{{forloop.counter0}}'> {{user}} </a> <br><br><br>
+    {%endfor%}
+
+
+{% endblock %}

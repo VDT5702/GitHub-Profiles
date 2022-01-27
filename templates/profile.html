@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+
+{% block content2 %}
+
+  <h1>{{User.fullname}} (@{{User.user}})</h1>
+  <h2>{{User.no_followers}} followers </h1>
+  
+  <h2> Profile Last Updated: {{User.lastupdated}} </h2> <a href = '/accounts/profile/{{uid}}'>(Update Now)</a>
+
+  <ul>
+  {%for repo in Repos%}
+  <li>{{repo.repo_name}}: {{repo.no_stars}} stars</li>
+  {%endfor%}
+
+{% endblock %}
